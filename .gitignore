@@ -1,0 +1,33 @@
+# Environment
+.env
+*.env
+
+# Credentials
+credentials.json
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Logs & Data
+logs/
+src/data/historical/
+src/data/*.json
+src/data/*.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
