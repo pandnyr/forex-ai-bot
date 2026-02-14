@@ -28,6 +28,7 @@ from .config import (
     GOOGLE_SHEETS_CREDS, GOOGLE_SHEET_NAME,
     NOTION_TOKEN, NOTION_DATABASE_ID,
     COMPOUND_ENABLED, RISK_PER_TRADE,
+    get_strategy_config,
 )
 from . import nice_funcs_mt5 as mt5f
 from .agents.trading_agent import TradingAgent
@@ -73,7 +74,7 @@ class ForexBot:
         self.journal_agent = ForexJournalAgent()
 
         # Strategy orchestrator
-        self.strategy = MultiStrategyOrchestrator()
+        self.strategy = MultiStrategyOrchestrator(get_strategy_config())
 
         # Trade logger (Sheets + Notion)
         self.trade_logger = TradeLogger(

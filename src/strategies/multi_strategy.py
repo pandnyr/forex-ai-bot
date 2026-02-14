@@ -53,6 +53,9 @@ SESSION_STRATEGIES = {
     "london": ["trend_following", "breakout", "scalp_momentum"],
     "new_york": ["scalp_momentum", "trend_following"],
     "overlap": ["scalp_momentum", "trend_following", "breakout"],
+    "london_ny_overlap": ["scalp_momentum", "trend_following", "breakout"],
+    "off_hours": [],
+    "weekend": [],
 }
 
 

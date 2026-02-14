@@ -47,7 +47,7 @@ def run_backtest():
     from src.strategies.breakout import BreakoutStrategy
     from src.config import (
         BACKTEST_INITIAL_BALANCE, BACKTEST_COMMISSION_PER_LOT,
-        BACKTEST_SLIPPAGE_PIPS,
+        BACKTEST_SLIPPAGE_PIPS, get_strategy_config,
     )
 
     loader = DataLoader()
@@ -57,11 +57,12 @@ def run_backtest():
         slippage_pips=BACKTEST_SLIPPAGE_PIPS,
     )
 
+    config = get_strategy_config()
     strategies = [
-        ("Scalp Momentum", ScalpMomentumStrategy()),
-        ("Trend Following", TrendFollowingStrategy()),
-        ("Mean Reversion", MeanReversionStrategy()),
-        ("Breakout", BreakoutStrategy()),
+        ("Scalp Momentum", ScalpMomentumStrategy(config)),
+        ("Trend Following", TrendFollowingStrategy(config)),
+        ("Mean Reversion", MeanReversionStrategy(config)),
+        ("Breakout", BreakoutStrategy(config)),
     ]
 
     symbol = "EURUSD"

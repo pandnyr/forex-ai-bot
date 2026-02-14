@@ -147,3 +147,46 @@ LEARNER_INTERVAL_TRADES = 20  # Run cumulative learning every N trades
 # ============================================================
 LOG_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "src", "data")
+
+
+def get_strategy_config() -> dict:
+    """Return all strategy parameters as a dict for strategy constructors."""
+    return {
+        # Scalp Momentum
+        "SCALP_EMA_FAST": SCALP_EMA_FAST,
+        "SCALP_EMA_SLOW": SCALP_EMA_SLOW,
+        "SCALP_RSI_PERIOD": SCALP_RSI_PERIOD,
+        "SCALP_RSI_THRESHOLD": SCALP_RSI_THRESHOLD,
+        "SCALP_ATR_PERIOD": SCALP_ATR_PERIOD,
+        "SCALP_SL_ATR_MULT": SCALP_SL_ATR_MULT,
+        "SCALP_TP_RR": SCALP_TP_RR,
+        "SCALP_MAX_SPREAD_PIPS": SCALP_MAX_SPREAD_PIPS,
+        "SCALP_MIN_AI_CONFIDENCE": SCALP_MIN_AI_CONFIDENCE,
+        # Trend Following
+        "TREND_EMA_FAST": TREND_EMA_FAST,
+        "TREND_EMA_SLOW": TREND_EMA_SLOW,
+        "TREND_ADX_PERIOD": TREND_ADX_PERIOD,
+        "TREND_ADX_THRESHOLD": TREND_ADX_THRESHOLD,
+        "TREND_ATR_MULT_SL": TREND_ATR_MULT_SL,
+        "TREND_TP_RR": TREND_TP_RR,
+        # Mean Reversion
+        "MEAN_REV_RSI_OVERSOLD": MEAN_REV_RSI_OVERSOLD,
+        "MEAN_REV_RSI_OVERBOUGHT": MEAN_REV_RSI_OVERBOUGHT,
+        "MEAN_REV_BB_PERIOD": MEAN_REV_BB_PERIOD,
+        "MEAN_REV_BB_STD": MEAN_REV_BB_STD,
+        "MEAN_REV_ATR_MULT_SL": MEAN_REV_ATR_MULT_SL,
+        # Breakout
+        "BREAKOUT_LOOKBACK_BARS": BREAKOUT_LOOKBACK_BARS,
+        "BREAKOUT_TP_MULT": BREAKOUT_TP_MULT,
+        "BREAKOUT_MAX_RANGE_PIPS": BREAKOUT_MAX_RANGE_PIPS,
+        "BREAKOUT_MIN_RANGE_PIPS": BREAKOUT_MIN_RANGE_PIPS,
+        # Session
+        "ASIAN_START": ASIAN_START,
+        "ASIAN_END": ASIAN_END,
+        "LONDON_START": LONDON_START,
+        "LONDON_END": LONDON_END,
+        "NY_START": NY_START,
+        "NY_END": NY_END,
+        "OVERLAP_START": OVERLAP_START,
+        "OVERLAP_END": OVERLAP_END,
+    }
