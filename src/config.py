@@ -10,7 +10,7 @@ load_dotenv()
 # ============================================================
 # API Keys
 # ============================================================
-ANTHROPIC_KEY = os.getenv("ANTHROPIC_KEY", "")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
 NOTION_TOKEN = os.getenv("NOTION_TOKEN", "")
 NOTION_DATABASE_ID = os.getenv("NOTION_DATABASE_ID", "")
 GOOGLE_SHEETS_CREDS = os.getenv("GOOGLE_SHEETS_CREDS", "credentials.json")
@@ -68,8 +68,8 @@ OVERLAP_START, OVERLAP_END = 13, 16  # London-NY overlap (best volatility)
 # ============================================================
 # AI Model Configuration (Brain + Muscles Pattern)
 # ============================================================
-BRAIN_MODEL = "claude-sonnet-4-20250514"    # Critical decisions (entry/exit/weekly review)
-MUSCLE_MODEL = "claude-haiku-4-5-20251001"  # Monitoring, routine analysis, scanning
+BRAIN_MODEL = "anthropic/claude-sonnet-4-20250514"    # Critical decisions (via OpenRouter)
+MUSCLE_MODEL = "anthropic/claude-3.5-haiku-20241022"  # Monitoring, routine (via OpenRouter)
 AI_MAX_TOKENS = 1024
 AI_TEMPERATURE = 0.3
 
